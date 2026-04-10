@@ -1,0 +1,16 @@
+# Pythonowe śmieci
+__pycache__/
+*.pyc
+
+# Dane (lepiej ich nie pchać na GitHuba, bo są duże)
+data/
+*.gz
+
+# Twoje wytrenowane modele (opcjonalnie, jeśli są duże)
+*.npz
+
+# Środowiska wirtualne
+venv/
+.venv/
+
+.vscode/
