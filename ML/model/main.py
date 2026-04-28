@@ -1,51 +1,39 @@
+from pyexpat import model
+
+from model import Model_relu_softmax
 from layer import Layer
 from mnist_loader import normalise_data
 from functions import *
+from pathlib import Path
 
-images, labels = normalise_data(10, 'train-images-idx3-ubyte.gz','train-labels-idx1-ubyte.gz')
+data_path = str(Path(__file__).parent.parent / "data")
+
+images, labels = normalise_data(
+    10, "train-images-idx3-ubyte.gz", "train-labels-idx1-ubyte.gz"
+)
 print(len(images))
 
 
 # --- 3. Proces Forward Pass ---
 # Przejście przez warstwy
-learning_rate = 0.001  # Jak duże kroki robimy?
-
+learning_rate = 0.01  # Jak duże kroki robimy?
+epochs = 25
 batch_size = 128
 
-for epoch in range(50):
-    # Mieszamy dane na początku epoki (ważne!)
-    permutation = np.random.permutation(len(images))
-    images_shuffled = images[permutation]
-    labels_shuffled = labels[permutation]
-    
-    for i in range(0, batch_size*128, batch_size):
-        # Wycinamy kawałek danych
-        batch_images = images_shuffled[i:i+batch_size]
-        batch_labels = labels_shuffled[i:i+batch_size]
-        
-        # --- FORWARD ---
-        out1 = l1.forward(batch_images)
-        act1 = r1.forward(out1)
-        out2 = l2.forward(act1)
-        act2 = r2.forward(out2)
-        out3 = l3.forward(act2)
-        probs = soft.forward(out3)
-        
-        # --- BACKWARD ---
-        dZ = probs - batch_labels
-        d1 = l3.backward(dZ)
-        d2 = r2.backward(d1)
-        d3 = l2.backward(d2)
-        d4 = r1.backward(d3)
-        l1.backward(d4)
-        
-        # --- UPDATE ---
-        for layer in [l1, l2, l3]:
-            layer.weights -= learning_rate * layer.dweights
-            layer.biases -= learning_rate * layer.dbiases
-            
-    # Po każdej epoce sprawdźmy wynik na całym zbiorze
-    full_out = soft.forward(l3.forward(r2.forward(l2.forward(r1.forward(l1.forward(images))))))
-    loss = loss_func.forward(full_out, labels)
-    acc = np.mean(np.argmax(full_out, axis=1) == np.argmax(labels, axis=1))
-    print(f"Epoch {epoch}, Loss: {loss:.4f}, Acc: {acc*100:.2f}%")
+model = Model_relu_softmax([784, 128, 64, 10])
+print("Model created. Starting training...")
+model.train(images, labels, batch_size, learning_rate, epochs)
+
+test_images, test_labels = normalise_data(
+    10, "t10k-images-idx3-ubyte.gz", "t10k-labels-idx1-ubyte.gz"
+)
+print("Testing model on test data...")
+model.test(test_images, test_labels)
+print("Exporting model...")
+model.export("model.npz")
+print("Model exported to model.npz")
+
+new_model = Model_relu_softmax.from_file("model.npz")
+print("Model loaded from model.npz")
+print("Testing loaded model... (accuracy should be the same as before)")
+new_model.test(test_images, test_labels)

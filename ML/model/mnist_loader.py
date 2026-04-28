@@ -1,7 +1,5 @@
 from ast import TypeAlias
 from random import randint
-from time import sleep
-from turtle import ondrag
 from typing import Any
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,7 +8,7 @@ from pathlib import Path
 import struct
 
 
-def load_raw_data(filename: str, dir: str ):
+def load_raw_data(filename: str, dir: str):
 
     def get_numpy_type(type_id: int) -> np.dtype:
         types = {
@@ -49,28 +47,36 @@ def load_raw_data(filename: str, dir: str ):
         objects = flat_view.reshape(dimensions_sizes)
         return objects
 
-def normalise_data(classes_num:int, images_file, labels_file, data_folder_path = str(Path(__file__).parent.parent / 'data' ),):
 
-    data_files =  ['t10k-images-idx3-ubyte.gz', 't10k-labels-idx1-ubyte.gz', 'train-images-idx3-ubyte.gz', 'train-labels-idx1-ubyte.gz']
+def normalise_data(
+    classes_num: int,
+    images_file,
+    labels_file,
+    data_folder_path=str(Path(__file__).parent.parent / "data"),
+):
 
-    #wczytywanie danych
+    # data_files = [
+    #     "t10k-images-idx3-ubyte.gz",
+    #     "t10k-labels-idx1-ubyte.gz",
+    #     "train-images-idx3-ubyte.gz",
+    #     "train-labels-idx1-ubyte.gz",
+    # ]
+
+    # wczytywanie danych
     raw_images = load_raw_data(images_file, data_folder_path)
     raw_labels = load_raw_data(labels_file, data_folder_path)
 
-    #splaszczanie obrazow
+    # splaszczanie obrazow
     raw_images = raw_images.reshape(raw_images.shape[0], -1)
 
-    #rzutujemy int(0,255) na float(0,1)
-    images = raw_images.astype(np.float32)/255.0
+    # rzutujemy int(0,255) na float(0,1)
+    images = raw_images.astype(np.float32) / 255.0
 
-    #tworzymy wektory wynikowe
+    # tworzymy wektory wynikowe
 
-    #tworzymy macierz 60000 na 10
+    # tworzymy macierz 60000 na 10
     labels = np.zeros(shape=(raw_labels.shape[0], classes_num), dtype=np.float32)
 
     # TODO: sprawdzic jak dokladnie dziala arange
-    labels[np.arange(raw_labels.shape[0]), raw_labels]=1.0
+    labels[np.arange(raw_labels.shape[0]), raw_labels] = 1.0
     return (images, labels)
-
-
-

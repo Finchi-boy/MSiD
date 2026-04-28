@@ -13,4 +13,6 @@ data/
 venv/
 .venv/
 
+*.zip
+
 .vscode/
