@@ -1,0 +1,147 @@
+SPIS PLIKÓW WEJŚCIOWYCH (FEATURES) Z NHANES 2021-2023 DO MODELU CUKRZYCY
+========================================================================
+UWAGA: Każdy plik zawiera kolumnę "SEQN" (Sequence Number) – unikalny identyfikator pacjenta.
+Należy jej użyć jako klucza do łączenia (merge) plików. Nie używać jako cechy (feature) w modelu!
+
+1. DEMO_L.csv (Dane demograficzne)
+----------------------------------
+Opis: Podstawowe informacje o pacjencie, kluczowe dla oceny bazowego ryzyka.
+* RIDAGEYR - Wiek w latach (Zmienna numeryczna, wartości 0-80, gdzie 80 oznacza 80 lat i więcej)
+    {
+        0 to 79 - Range of Values
+        80 - 80 years of age and over
+    }
+* RIAGENDR - Płeć
+    {
+        1 - Male
+        2 - Female
+    }
+* RIDRETH3 - Rasa/Pochodzenie etniczne (Kategoryczna: 1-4, 6-7):
+    {
+        1 - Mexican American
+        2 - Other Hispanic
+        3 - Non-Hispanic White
+        4 - Non-Hispanic Black
+        6 - Non-Hispanic Asian
+        7 - Other Race - Including Multi-Racial
+        . - Missing
+    }
+* INDFMPIR - Stosunek dochodu rodziny do progu ubóstwa (Numeryczna: od 0.00 do 5.00. Bardzo ważny marker społeczno-ekonomiczny).
+    {
+        0 to 4.99 - Range of Values
+        5 - Value greater than or equal to 5.00
+        . - Missing
+    }
+
+2. BMX_L.csv (Pomiary ciała - Body Measures)
+--------------------------------------------
+Opis: Fizyczne wskaźniki otłuszczenia organizmu.
+* BMXBMI   - Wskaźnik masy ciała (BMI) w kg/m^2 (Numeryczna).
+    {
+        11.1 to 74.8 - Range of Values
+        . - Missing
+    }
+* BMXWAIST - Obwód talii w cm (Numeryczna. Często lepszy predyktor insulinooporności niż BMI).
+    {
+        39.8 to 187 - Range of Values
+        . - Missing
+    }
+* BMXWT    - Waga w kg (Numeryczna).
+    {
+        2.7 to 248.2 - Range of Values
+        . - Missing
+    }
+
+3. BPXO_L.csv (Ciśnienie krwi - metoda oscylometryczna)
+-------------------------------------------------------
+Opis: Nadciśnienie często współwystępuje z cukrzycą.
+* BPXOSY1  - Ciśnienie skurczowe, pierwszy pomiar w mmHg (Numeryczna).
+    {
+        61 to 232 - Range of Values
+        . - Missing
+    }
+* BPXODI1  - Ciśnienie rozkurczowe, pierwszy pomiar w mmHg (Numeryczna).
+    {
+        33 to 142 - Range of Values
+        . - Missing
+    }
+* BPXOSY2  - Ciśnienie skurczowe, drugi pomiar w mmHg (Numeryczna).
+    {
+        59 to 233 - Range of Values
+        . - Missing
+    }
+* BPXODI2  - Ciśnienie rozkurczowe, drugi pomiar w mmHg (Numeryczna).
+    {
+        32 to 139 - Range of Values
+        . - Missing
+    }
+
+4. TCHOL_L.csv (Cholesterol całkowity)
+--------------------------------------
+Opis: Ogólny poziom cholesterolu we krwi.
+* LBXTC    - Całkowity cholesterol w mg/dL (Numeryczna).
+    {
+        62 to 438 - Range of Values
+        . - Missing
+    }
+
+5. HDL_L.csv (Cholesterol HDL - "Dobry")
+----------------------------------------
+Opis: Wysoki HDL chroni przed chorobami metabolicznymi. U cukrzyków często jest on obniżony.
+* LBDHDD   - Cholesterol HDL w mg/dL (Numeryczna).
+    {
+        22 to 159 - Range of Values
+        . - Missing
+    }
+
+6. TRIGLY_L.csv (Trójglicerydy i LDL)
+-------------------------------------
+Opis: Wysokie trójglicerydy w połączeniu z niskim HDL to klasyczny obraz insulinooporności.
+* LBXTLG   - Trójglicerydy w mg/dL (Numeryczna).
+    {
+        19 to 1745 - Range of Values
+        . - Missing
+    }
+* LBDLDL   - Cholesterol LDL ("zły") w mg/dL (Numeryczna).
+    {
+        3 to 314 - Range of Values
+        . - Missing
+    }
+
+7. PAQ_L.csv (Aktywność fizyczna)
+---------------------------------
+Opis: Ankieta dotycząca ruchu, ćwiczeń oraz trybu siedzącego. Uwaga: odpowiedzi o częstotliwość są rozbite na liczbę i jednostkę.
+* PAD680   - Czas spędzony na siedzeniu w typowym dniu (Numeryczna: minuty). Bardzo ważny predyktor otyłości i insulinooporności.
+
+8. SMQ_L.csv (Palenie tytoniu - dorośli)
+----------------------------------------
+Opis: Palenie zwiększa ryzyko powikłań i insulinooporności.
+* SMQ020   - Czy wypalił(a) co najmniej 100 papierosów w życiu? (Kategoryczna: 1 = Tak, 2 = Nie).
+    {
+        1 - Yes
+        2 - No
+        7 - Refused
+        9 - Don't know
+        . - Missing
+    }
+* SMQ040   - Czy obecnie palisz papierosy? (Kategoryczna: 1 = Codziennie, 2 = W niektóre dni, 3 = Wcale. Uwaga: pytanie zadawane tylko tym, którzy w SMQ020 odpowiedzieli "Tak").
+    {
+        1 - Every day
+        2 - Some days
+        3 - Not at all
+        7 - Refused
+        9 - Don't know
+        . - Missing
+    }
+
+9. SMQFAM_L.csv (Palenie w domu)
+--------------------------------
+Opis: Ocena biernego palenia i środowiska domowego.
+* SMD460   - Liczba osób w gospodarstwie domowym, które palą wewnątrz domu (Numeryczna: 0-3, gdzie 0 oznacza brak).
+    {
+        0 - No one in household is a smoker
+        1 - 1 household member is a smoker
+        2 - 2 or more household members are smokers
+        777 - Refused
+        999 - Don't know
+    }

@@ -1,0 +1,5 @@
+Definicja chorego na cukrzyce:
+
+1 w polu DIQ010 w pliku Questionnaire/DIQ_L.csv
+>= 6,5 w polu LBXGH w pliku Laboratory/GHB_L.csv
+>= 126 mg/dL w polu LBXGLU w pliku Laboratory/GLU_L.csv
