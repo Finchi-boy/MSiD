@@ -1,0 +1,19 @@
+[project]
+name = "datasets"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Finchii",email = "284302@student.pwr.edu.pl"}
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pandas (>=3.0.3,<4.0.0)",
+    "requests (>=2.34.2,<3.0.0)",
+    "nhanes-pytool-api (>=0.1.1,<0.2.0)",
+    "lxml (>=6.1.1,<7.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
