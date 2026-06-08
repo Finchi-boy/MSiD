@@ -1,0 +1,23 @@
+==================================================
+          RAPORT Z PRUNINGU WAG MODELU            
+==================================================
+Globalna rzadkość modelu (Sparsity):   75.99%
+Wyzerowano wag:                        54108 z 71200
+--------------------------------------------------
+ODRZUCONE CECHY WEJŚCIOWE (SZUM - max 2 aktywne połączenia):
+ - Model nie odrzucił żadnej cechy.
+--------------------------------------------------
+ZACHOWANE CECHY WEJŚCIOWE (Posortowane wg CAŁKOWITEJ siły):
+ - [ZACHOWANO] HbA1c (Hemoglobina glikowana)       (Aktywne:  42/128, Siła całkowita: 27.3747)
+ - [ZACHOWANO] Ciśnienie Skurczowe                 (Aktywne:  38/128, Siła całkowita: 22.4802)
+ - [ZACHOWANO] Płeć                                (Aktywne:  32/128, Siła całkowita: 20.7844)
+ - [ZACHOWANO] Cholesterol Całkowity               (Aktywne:  33/128, Siła całkowita: 20.3046)
+ - [ZACHOWANO] Wiek                                (Aktywne:  33/128, Siła całkowita: 20.1172)
+ - [ZACHOWANO] Cholesterol HDL                     (Aktywne:  31/128, Siła całkowita: 20.0801)
+ - [ZACHOWANO] Obwód talii                         (Aktywne:  34/128, Siła całkowita: 19.6955)
+ - [ZACHOWANO] Liczba osób w domu (SZUM)           (Aktywne:  29/128, Siła całkowita: 17.5298)
+ - [ZACHOWANO] BMI (Wskaźnik masy ciała)           (Aktywne:  25/128, Siła całkowita: 15.7285)
+ - [ZACHOWANO] Ciśnienie Rozkurczowe               (Aktywne:  24/128, Siła całkowita: 15.2770)
+ - [ZACHOWANO] Miesiąc badania (SZUM)              (Aktywne:  27/128, Siła całkowita: 14.7850)
+ - [ZACHOWANO] Poziom edukacji                     (Aktywne:  20/128, Siła całkowita: 12.2770)
+==================================================

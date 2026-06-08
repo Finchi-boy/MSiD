@@ -1,0 +1,46 @@
+Wyniki przed pruningiem:
+==================================================
+          MEDYCZNY RAPORT KLASYFIKACJI CUKRZYCY
+==================================================
+Accuracy (Dokładność ogólna): 0.8981
+Precision (Precyzja):         0.6078
+Sensitivity / Recall (Czułość):0.8333
+Specificity (Swoistość):      0.9090
+F1-Score:                     0.7029
+AUC ROC:                      0.9428
+--------------------------------------------------
+Macierz Pomyłek (Confusion Matrix):
+                  Zdiagnozowany:  Zdiagnozowany:
+                  Zdrowy          Chory
+Faktycznie Zdrowy:  1998            200
+Faktycznie Chory:   62              310
+==================================================
+
+[INFO] Raport został pomyślnie zapisany do pliku: D:\Users (D)\amx10\Desktop (D)\msid\MSiD\ML\new_model\raport6.txt
+
+
+--- ROZPOCZĘCIE PRUNINGU WAG ---
+Warstwa 0 (12 -> 128): Wyzerowano 140/1536 wag (9.11%)
+Warstwa 2 (128 -> 256): Wyzerowano 10116/32768 wag (30.87%)
+Warstwa 4 (256 -> 128): Wyzerowano 14090/32768 wag (43.00%)
+Warstwa 6 (128 -> 32): Wyzerowano 1289/4096 wag (31.47%)
+Warstwa 8 (32 -> 1): Wyzerowano 3/32 wag (9.38%)
+Globalna rzadkość modelu (Sparsity): 36.01%
+
+Wyniki po pruningu:
+==================================================
+          MEDYCZNY RAPORT KLASYFIKACJI CUKRZYCY
+==================================================
+Accuracy (Dokładność ogólna): 0.9237
+Precision (Precyzja):         0.7047
+Sensitivity / Recall (Czułość):0.8145
+Specificity (Swoistość):      0.9422
+F1-Score:                     0.7556
+AUC ROC:                      0.9406
+--------------------------------------------------
+Macierz Pomyłek (Confusion Matrix):
+                  Zdiagnozowany:  Zdiagnozowany:
+                  Zdrowy          Chory
+Faktycznie Zdrowy:  2071            127
+Faktycznie Chory:   69              303
+==================================================

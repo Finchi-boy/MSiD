@@ -1,0 +1,16 @@
+==================================================
+          MEDYCZNY RAPORT KLASYFIKACJI CUKRZYCY   
+==================================================
+Accuracy (Dokładność ogólna): 0.9062
+Precision (Precyzja):         0.6318
+Sensitivity / Recall (Czułość):0.8441
+Specificity (Swoistość):      0.9167
+F1-Score:                     0.7227
+AUC ROC:                      0.9428
+--------------------------------------------------
+Macierz Pomyłek (Confusion Matrix):
+                  Zdiagnozowany:  Zdiagnozowany: 
+                  Zdrowy          Chory          
+Faktycznie Zdrowy:  2015            183            
+Faktycznie Chory:   58              314            
+==================================================

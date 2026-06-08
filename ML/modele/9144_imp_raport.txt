@@ -1,0 +1,120 @@
+imp 0
+
+==================================================
+          MEDYCZNY RAPORT KLASYFIKACJI CUKRZYCY   
+==================================================
+Accuracy (Dokładność ogólna): 0.9066
+Precision (Precyzja):         0.6352
+Sensitivity / Recall (Czułość):0.8333
+Specificity (Swoistość):      0.9190
+F1-Score:                     0.7209
+AUC ROC:                      0.9454
+--------------------------------------------------
+Macierz Pomyłek (Confusion Matrix):
+                  Zdiagnozowany:  Zdiagnozowany: 
+                  Zdrowy          Chory          
+Faktycznie Zdrowy:  2020            178            
+Faktycznie Chory:   62              310            
+==================================================
+
+imp 1
+
+==================================================
+          MEDYCZNY RAPORT KLASYFIKACJI CUKRZYCY   
+==================================================
+Accuracy (Dokładność ogólna): 0.9058
+Precision (Precyzja):         0.6321
+Sensitivity / Recall (Czułość):0.8360
+Specificity (Swoistość):      0.9177
+F1-Score:                     0.7199
+AUC ROC:                      0.9453
+--------------------------------------------------
+Macierz Pomyłek (Confusion Matrix):
+                  Zdiagnozowany:  Zdiagnozowany: 
+                  Zdrowy          Chory          
+Faktycznie Zdrowy:  2017            181            
+Faktycznie Chory:   61              311            
+==================================================
+
+imp 2
+
+==================================================
+          MEDYCZNY RAPORT KLASYFIKACJI CUKRZYCY   
+==================================================
+Accuracy (Dokładność ogólna): 0.9066
+Precision (Precyzja):         0.6347
+Sensitivity / Recall (Czułość):0.8360
+Specificity (Swoistość):      0.9186
+F1-Score:                     0.7216
+AUC ROC:                      0.9456
+--------------------------------------------------
+Macierz Pomyłek (Confusion Matrix):
+                  Zdiagnozowany:  Zdiagnozowany: 
+                  Zdrowy          Chory          
+Faktycznie Zdrowy:  2019            179            
+Faktycznie Chory:   61              311            
+==================================================
+
+imp 3
+
+==================================================
+          MEDYCZNY RAPORT KLASYFIKACJI CUKRZYCY   
+==================================================
+Accuracy (Dokładność ogólna): 0.9089
+Precision (Precyzja):         0.6444
+Sensitivity / Recall (Czułość):0.8280
+Specificity (Swoistość):      0.9227
+F1-Score:                     0.7247
+AUC ROC:                      0.9440
+--------------------------------------------------
+Macierz Pomyłek (Confusion Matrix):
+                  Zdiagnozowany:  Zdiagnozowany: 
+                  Zdrowy          Chory          
+Faktycznie Zdrowy:  2028            170            
+Faktycznie Chory:   64              308            
+==================================================
+
+imp 4
+
+==================================================
+          MEDYCZNY RAPORT KLASYFIKACJI CUKRZYCY   
+==================================================
+Accuracy (Dokładność ogólna): 0.9144
+Precision (Precyzja):         0.6696
+Sensitivity / Recall (Czułość):0.8065
+Specificity (Swoistość):      0.9327
+F1-Score:                     0.7317
+AUC ROC:                      0.9379
+--------------------------------------------------
+Macierz Pomyłek (Confusion Matrix):
+                  Zdiagnozowany:  Zdiagnozowany: 
+                  Zdrowy          Chory          
+Faktycznie Zdrowy:  2050            148            
+Faktycznie Chory:   72              300            
+==================================================
+
+imp final
+
+==================================================
+          RAPORT Z PRUNINGU WAG MODELU
+==================================================
+Globalna rzadkość modelu (Sparsity):   75.99%
+Wyzerowano wag:                        54108 z 71200
+--------------------------------------------------
+ODRZUCONE CECHY WEJŚCIOWE (SZUM - max 2 aktywne połączenia):
+ - Model nie odrzucił żadnej cechy.
+--------------------------------------------------
+ZACHOWANE CECHY WEJŚCIOWE (Posortowane wg CAŁKOWITEJ siły):
+ - [ZACHOWANO] HbA1c (Hemoglobina glikowana)       (Aktywne:  35/128, Siła całkowita: 22.1613)
+ - [ZACHOWANO] Ciśnienie Skurczowe                 (Aktywne:  33/128, Siła całkowita: 21.9330)
+ - [ZACHOWANO] Cholesterol HDL                     (Aktywne:  35/128, Siła całkowita: 21.9223)
+ - [ZACHOWANO] Poziom edukacji                     (Aktywne:  33/128, Siła całkowita: 20.1678)
+ - [ZACHOWANO] Płeć                                (Aktywne:  31/128, Siła całkowita: 20.1558)
+ - [ZACHOWANO] Obwód talii                         (Aktywne:  31/128, Siła całkowita: 19.7315)
+ - [ZACHOWANO] Wiek                                (Aktywne:  29/128, Siła całkowita: 18.9803)
+ - [ZACHOWANO] Liczba osób w domu (SZUM)           (Aktywne:  29/128, Siła całkowita: 17.9836)
+ - [ZACHOWANO] Cholesterol Całkowity               (Aktywne:  30/128, Siła całkowita: 17.9701)
+ - [ZACHOWANO] BMI (Wskaźnik masy ciała)           (Aktywne:  30/128, Siła całkowita: 17.7567)
+ - [ZACHOWANO] Ciśnienie Rozkurczowe               (Aktywne:  25/128, Siła całkowita: 16.7397)
+ - [ZACHOWANO] Miesiąc badania (SZUM)              (Aktywne:  27/128, Siła całkowita: 16.4343)
+==================================================
